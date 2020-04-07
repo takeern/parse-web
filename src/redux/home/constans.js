@@ -1,0 +1,1 @@
+export const GOT_LOGO_SRC = 'GOT_LOGO_SRC';
