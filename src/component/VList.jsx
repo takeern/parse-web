@@ -23,6 +23,7 @@ const VList = (p) => {
         let { startIndex } = scrollData;
         const len = startIndex + config.maxLen > data.length ? data.length : startIndex + config.maxLen;
         startIndex = startIndex > 0 ? startIndex : 0;
+        let index = 0;
         for (let i = startIndex; i < len; i ++) {
 
             list.push(
@@ -33,12 +34,13 @@ const VList = (p) => {
                     left: 0,
                     width: '100%',
                 }}
-                key={i}
+                key={index}
                 data-tag-index={i}
                 >
-                    {el({ props: { ...data[i], height: boxHeight, index: i }})}
+                    {el({ props: { ...data[i], height: boxHeight, index: index }})}
                 </div>
             );
+            index ++;
         }
 
         return (
